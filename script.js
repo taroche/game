@@ -5,11 +5,21 @@ let doorImage3 = document.getElementById('door3');
 let botDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/robot.svg';
 let beachDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/beach.svg';
 let spaceDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/space.svg';
+let closedDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg';
 
 let numClosedDoors = 3;
 let openDoor1;
 let openDoor2;
 let openDoor3;
+
+const isClicked = (door) => {
+    if (door.src === closedDoorPath) {
+      return false;
+    }
+    else {
+      return true;
+    }
+  };
 
 const randomChoreDoorGenerator = () => {
     const choreDoor = Math.floor(Math.random() * numClosedDoors);
@@ -32,18 +42,25 @@ const randomChoreDoorGenerator = () => {
   
 
   doorImage1.onclick = () => {
-    doorImage1.src = openDoor1;
-    playDoor(doorImage1);
+      if (!isClicked(doorImage1)) {
+        doorImage1.src = openDoor1;
+        playDoor(doorImage1);
+    };
   };
   
 doorImage2.onclick = () => {
-    doorImage2.src = openDoor2;
-    playDoor(doorImage2);
+    if (!isClicked(doorImage2)){
+        doorImage2.src = openDoor2;
+        playDoor(doorImage2);
+    };
 };
     
 doorImage3.onclick = () => {
-    doorImage3.src = openDoor3;
-    playDoor(doorImage3);
+    if (!isClicked(doorImage3)) {
+        doorImage3.src = openDoor3;
+        playDoor(doorImage3);
+    };
 };
+
 
 randomChoreDoorGenerator();
