@@ -47,4 +47,17 @@ header {
     cursor: pointer;
     padding: 10px;
 }
-  
+
+.start-row {
+    margin: auto;
+    margin-bottom: 21px;
+    padding-top: 18px;
+    width: 120px;
+    height: 43px;
+    font-family: 'Work Sans';
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    color: #010165;
+    background-color: #eb6536;
+  }
